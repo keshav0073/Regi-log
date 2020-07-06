@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+{% load static %}
+
+{% load widget_tweaks%}
+
+{% block body %}
+    <div class="wrapper">
+			<div class="inner">
+				<img src="{% static 'images/image-1.png'%}" alt="" class="image-1">
+				<form action="" autocomplete="off" method="POST">
+					{% csrf_token%}
+					<h3>LOGIN HERE!</h3>
+					{{ error_message }}
+					<div class="form-holder">
+						<span class="lnr lnr-user"></span>
+						<input type="text" class="form-control" placeholder="Username" name="username">
+					</div>
+					
+					<div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+						<input type="password" class="form-control" placeholder="Password" name="password">
+					</div>
+					
+					<button>
+						<span>LOGIN</span>
+					</button>
+					<button>
+						<span><a href="{% url 'user_register' %}">Register</a>
+</span>
+					</button>
+				</form>
+				<img src="{% static 'images/image-2.png'%}" alt="" class="image-2">
+			</div>
+			
+		</div>
+		
+		<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static 'js/main.js'%}"></script>
+{%endblock%}

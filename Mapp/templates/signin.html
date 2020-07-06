@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+{%load static %}
+
+{% load widget_tweaks%}
+
+{% block body %}
+    <div class="wrapper">
+			<div class="inner">
+				<img src="{% static 'images/image-1.png'%}" alt="" class="image-1">
+				<form action=""     autocomplete="off" method="POST">
+					 {% csrf_token %}
+					<h3>New Account?</h3>
+					<div class="form-holder">
+						<span class="lnr lnr-user"></span>
+						<!-- <input type="text" class="form-control" placeholder="Username"> -->
+						{{form.username}}
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-phone-handset"></span>
+						<!-- <input type="text" class="form-control" placeholder="Phone Number"> -->
+						{{form.phone_number}}
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-envelope"></span>
+						<!-- <input type="text" class="form-control" placeholder="Mail"> -->
+						{{form.email}}
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+						<!-- <input type="password" class="form-control" placeholder="Password"> -->
+						{{form.password}}
+					</div>
+					<div class="form-holder">
+						<span class="lnr lnr-lock"></span>
+						<!-- <input type="password" class="form-control" placeholder="Confirm Password"> -->
+						{{form.password_repeat}}
+					</div>
+					<button>
+						<span>Register</span>
+					</button>
+				</form>
+				<img src="{% static 'images/image-2.png'%}" alt="" class="image-2">
+			</div>
+			
+		</div>
+		<script type="text/javascript">
+		// function req(){
+		// 	console.log("function calling")
+		// 	$.ajax({
+		// 		url: '{% url 'user_register' %}',
+		// 		dataType: 'json',
+        // 		success: function (data) {
+		// 			console.log("data send")
+		// 		}
+		// 	})
+		// 	console.log("after fuction ajax ")
+		// }
+
+
+		</script>
+		<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+		<script src="{% static 'js/main.js'%}"></script>
+{%endblock%}
